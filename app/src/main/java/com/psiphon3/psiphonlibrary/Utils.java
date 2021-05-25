@@ -326,11 +326,6 @@ public class Utils
             MyLog.logger = new WeakReference<>(logger);
         }
         
-        static public void unsetLogger()
-        {
-            MyLog.logger.clear();
-        }
-
         // TODO: Add sensitivity to debug logs
         static public void d(String msg)
         {
@@ -598,16 +593,34 @@ public class Utils
         return false;
     }
 
-    public static boolean hasVpnService()
-    {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH;
+    public static String getClientPlatformSuffix() {
+        String suffix = "";
+
+        // Detect if device is rooted and append to the client_platform string
+        if (Utils.isRooted()) {
+            suffix += PsiphonConstants.ROOTED;
+        }
+
+        // Detect if this is a Play Store build
+        if (EmbeddedValues.IS_PLAY_STORE_BUILD) {
+            suffix += PsiphonConstants.PLAY_STORE_BUILD;
+        }
+
+        return suffix;
     }
 
-    public static boolean supportsAlwaysOnVPN()
-    {
+    public static boolean supportsAlwaysOnVPN() {
         return Build.VERSION.SDK_INT >= 24;
     }
-    
+
+    public static boolean supportsVpnExclusions() {
+        return Build.VERSION.SDK_INT >= 21;
+    }
+
+    public static boolean supportsNotificationSound() {
+        return Build.VERSION.SDK_INT < 26;
+    }
+
     public static String getLocalTimeString(Date date)
     {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.US);

@@ -60,8 +60,11 @@ APP_LANGS = {
     'it': 'it',         # Italian
     'kk': 'kk',         # Kazak
     'km': 'km',         # Khmer
+    'kn': 'kn',         # Kannada
     'ko': 'ko',         # Korean
     'ky': 'ky',         # Kyrgyz
+    'ml': 'ml',         # Malayalam
+    'mr': 'mr',         # Marathi
     'ms': 'ms',         # Malay
     'my': 'my',         # Burmese
     'nb_NO': 'nb',      # Norwegian
@@ -71,6 +74,7 @@ APP_LANGS = {
     'pt_PT': 'pt',   # Portuguese-Portugal
     'ru': 'ru',         # Russian
     'sn': 'sn',         # Shona
+    'sw': 'sw',         # Swahili
     'tg': 'tg',         # Tajik
     'th': 'th',         # Thai
     'ti': 'ti',         # Tigrinya
@@ -118,6 +122,7 @@ FEEDBACK_LANGS = {
     'pt_PT': 'pt_PT',
     'ru': 'ru',
     'sn': 'sn',
+    'sw': 'sw',
     'tg': 'tg',
     #'th': 'th',
     'ti': 'ti',
